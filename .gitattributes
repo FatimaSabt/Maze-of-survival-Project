@@ -1,0 +1,20 @@
+# Handle line endings automatically for text files
+* text=auto
+
+# Unity files
+*.cs diff=csharp
+
+# Treat binary files as binary so Git doesn't try to merge them
+*.unity binary
+*.prefab binary
+*.fbx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+*.anim binary
+*.controller binary
+*.asset binary
+*.unitypackage binary
