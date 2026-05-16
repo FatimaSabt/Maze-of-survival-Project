@@ -12,8 +12,16 @@ public class Arrow : MonoBehaviour
  
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
-    }
-}
+          if (collision.gameObject.CompareTag("Player"))
+        {
+             PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
+            if (player != null)
+            {
+                player.TakeDamage(1);
+            }
+        }
+
+        Destroy(gameObject); // arrow disappears after impact
+    }
+    }
