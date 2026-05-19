@@ -10,6 +10,7 @@ TagManager:
   - Arrow_Shooter
   - Wall
   - Coin
+  - Key
   layers:
   - Default
   - TransparentFX

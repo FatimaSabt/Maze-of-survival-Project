@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class rotateCoin : MonoBehaviour
+public class rotator : MonoBehaviour
 {
        void Update()
     {
