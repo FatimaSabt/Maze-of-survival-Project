@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 489865287238838395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 1179424050294369124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 1957378743451830613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 2206577225579747100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -422,6 +422,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 1549510107172300332}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &2512298429684979713
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 2311098970547670151}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &2553105737433267471
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 2553105737433267471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,6 +759,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 7951955109647975686}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &3239233804946669999
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 3561314658490277049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1084,6 +1087,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 5237919720862123035}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &4081560491250402171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1203,7 @@ Transform:
   m_GameObject: {fileID: 4117462044122295731}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1312,6 +1316,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 2487478288140780258}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &5138727398149172270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1424,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 7959206337865221769}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &5491686077315898206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1722,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 1055342525943170403}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &6528530012261861489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,6 +1830,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 5119970743359648567}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &6938120539576631804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,6 +2118,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 3948164238984861729}
   arrowPrefab: {fileID: 1941454168195219105, guid: 3fce5627bb0114c489837d46b0edd985, type: 3}
   arrowSpeed: 10
+  shootInterval: 5
 --- !u!1 &7053952517369669258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2177,7 @@ Transform:
   m_GameObject: {fileID: 7687309529704892558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2479,7 +2488,7 @@ Transform:
   m_GameObject: {fileID: 9163164100447291444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.03, z: -1.622}
+  m_LocalPosition: {x: 4.73, y: 0.03, z: 0.2800082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
