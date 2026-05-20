@@ -25,7 +25,7 @@ public class FirstPersonCamera : MonoBehaviour
         void Update()
     {
         // Collect Mouse Input
-        Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue();
         float inputX = mouseDelta.x * mouseSensitivity * Time.deltaTime;
         float inputY = mouseDelta.y * mouseSensitivity * Time.deltaTime;
 

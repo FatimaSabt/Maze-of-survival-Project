@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3795973240748516199}
   - component: {fileID: 1324411597124500922}
   - component: {fileID: 9139049556089613660}
+  - component: {fileID: 3277119080951274589}
+  - component: {fileID: 6361607602714356251}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -126,3 +128,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889974bbcc4314c62ac64b26196ddeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::rotateCoin
+--- !u!114 &3277119080951274589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435962828146311858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671e7b77029c843b3b5cf529966ee199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::collectCoin
+  coinValue: 1
+--- !u!135 &6361607602714356251
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435962828146311858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: -8.703988e-19, y: -0.0000019078143, z: -1.982764e-17}
