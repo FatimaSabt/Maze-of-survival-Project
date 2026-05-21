@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float life = 3f;
     public int damage = 1;
 
     void Awake()
     {
-        Destroy(gameObject, life);
+        Destroy(gameObject, 3f);
     }
 
     void OnCollisionEnter(Collision collision)

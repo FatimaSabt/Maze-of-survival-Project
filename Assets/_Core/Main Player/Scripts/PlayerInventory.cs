@@ -2,11 +2,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // This class manages the player's inventory
-    // It will be for key and coins
     public bool hasKey = false;
     public int coinCount = 0;
-
 
     public void CollectKey()
     {
