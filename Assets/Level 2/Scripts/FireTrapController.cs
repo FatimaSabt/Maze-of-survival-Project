@@ -9,9 +9,9 @@ public class FireTrapController : MonoBehaviour
     public Collider damageCollider;
 
     [Header("Trap Timings")]
-    public float idleTime = 2.0f;
-    public float warningTime = 1.0f;
-    public float fireTime = 2.0f;
+    public float idleTime = 4.0f;
+    public float warningTime = 2.0f;
+    public float fireTime = 3.0f;
 
     void Start()
     {
