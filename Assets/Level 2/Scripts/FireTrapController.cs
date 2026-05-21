@@ -25,69 +25,32 @@ public class FireTrapController : MonoBehaviour
     {
         while (true)
         {
-            // Safety Check 1: If the objects are destroyed, exit the loop immediately
-            if (fireParticles == null || warningSmoke == null || damageCollider == null)
-            {
-                yield break;
-            }
+            // Safety Check 1
+            if (fireParticles == null || warningSmoke == null || damageCollider == null) yield break;
 
-            // State 1: Idle (Everything is off)
-            fireParticles.Stop();
-            warningSmoke.Stop();
+            // State 1: Idle (Everything is off, fully cleared)
+            fireParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            warningSmoke.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             damageCollider.enabled = false;
             yield return new WaitForSeconds(idleTime);
 
-            // Safety Check 2: Check again after waiting
+            // Safety Check 2
             if (warningSmoke == null) yield break;
 
             // State 2: Telegraph Warning (Smoke only)
             warningSmoke.Play();
             yield return new WaitForSeconds(warningTime);
 
-            // Safety Check 3: Check one last time before the lethal state
+            // Safety Check 3
             if (fireParticles == null || warningSmoke == null || damageCollider == null) yield break;
 
-            // State 3: Active Hazard (Fire and Collider ON)
-            warningSmoke.Stop();
+            // State 3: Active Hazard (Fire and Collider ON, clear smoke)
+            warningSmoke.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             fireParticles.Play();
             damageCollider.enabled = true;
             yield return new WaitForSeconds(fireTime);
         }
     }
-
-    // IEnumerator TrapCycle()
-    // {
-    //     while (true)
-    //     {
-    //         // -------------------------
-    //         // IDLE
-    //         // -------------------------
-    //         fireParticles.gameObject.SetActive(false);
-    //         warningSmoke.gameObject.SetActive(false);
-
-    //         damageCollider.enabled = false;
-
-    //         yield return new WaitForSeconds(idleTime);
-
-    //         // -------------------------
-    //         // WARNING
-    //         // -------------------------
-    //         warningSmoke.gameObject.SetActive(true);
-
-    //         yield return new WaitForSeconds(warningTime);
-
-    //         // -------------------------
-    //         // FIRE ACTIVE
-    //         // -------------------------
-    //         warningSmoke.gameObject.SetActive(false);
-
-    //         fireParticles.gameObject.SetActive(true);
-
-    //         damageCollider.enabled = true;
-
-    //         yield return new WaitForSeconds(fireTime);
-    //     }
-    // }
 
     void OnTriggerEnter(Collider other)
     {
