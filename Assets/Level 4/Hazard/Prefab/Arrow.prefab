@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9990491aaeec4a21bc1be4e88feeb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
-  life: 3
+  damage: 1
 --- !u!1001 &1752164446543265553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9990491aaeec4a21bc1be4e88feeb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
-  life: 3
+  damage: 1
 --- !u!136 &7441306757539538787
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -13,8 +13,19 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    private Vector3 velocity;
+     private Vector3 velocity;
     private bool isGrounded;
+
+    [Header("Footstep Settings")]
+    public float footstepInterval = 0.45f;
+    private float footstepTimer;
+
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update()
     {
@@ -47,11 +58,45 @@ public class PlayerMovement : MonoBehaviour
         {
             // Physics formula to calculate required upward velocity for a target height
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            audioManager.PlaySFX(audioManager._playerJump);
         }
 
         // 5. Gravity System
         // Updates downwards velocity over time and pushes the character controller downward
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        // 6. Footstep Sound Logic
+        // Plays footstep sounds when the player is moving on the ground.
+         HandleFootstepAudio(move);
     }
+
+    private void HandleFootstepAudio(Vector3 move)
+    {
+        if (audioManager == null)
+        {
+            return;
+        }
+
+        if (isGrounded && move.magnitude > 0.1f)
+        {
+            // Decrease the timer based on elapsed time
+            footstepTimer -= Time.deltaTime;
+
+            // When the timer reaches zero, play a footstep sound and reset the timer
+            if (footstepTimer <= 0f)
+            {
+                audioManager.PlaySFX(audioManager._playerFootsteps);
+                // Reset the timer to the defined interval for the next footstep sound
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
+    }
+
+
 }
+

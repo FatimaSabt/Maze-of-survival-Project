@@ -4,10 +4,16 @@ public class Arrow : MonoBehaviour
 {
     public int damage = 1;
 
+  AudioManager audioManager;
+
     void Awake()
     {
         Destroy(gameObject, 3f);
+                audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
+
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -22,6 +28,7 @@ public class Arrow : MonoBehaviour
             }
         }else if (!collision.gameObject.CompareTag("Arrow_Shooter") && !collision.gameObject.CompareTag("Arrow"))
         {
+            audioManager.PlaySFX(audioManager._arrowTrap);
             Destroy(gameObject);
             Debug.Log("Arrow collided with: " + collision.gameObject.name);
         }

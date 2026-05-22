@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class KeyPickup : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -10,6 +16,7 @@ public class KeyPickup : MonoBehaviour
 
             if (inventory != null)
             {
+                audioManager.PlaySFX(audioManager._keyCollect);
                 inventory.CollectKey();
                 Destroy(gameObject);
             }
