@@ -15,8 +15,6 @@ public class FireTrapController : MonoBehaviour
 
     void Start()
     {
-        // fireParticles.gameObject.SetActive(false);
-        // warningSmoke.gameObject.SetActive(false);
         // Start the trap cycle immediately
         StartCoroutine(TrapCycle());
     }
@@ -52,12 +50,43 @@ public class FireTrapController : MonoBehaviour
         }
     }
 
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         // Insert your game over or damage logic here
+    //         Debug.Log("Player stepped in the fire!");
+    //     }
+    // }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Insert your game over or damage logic here
-            Debug.Log("Player stepped in the fire!");
+            // 1. Stop the player from moving
+            CharacterController playerController = other.GetComponent<CharacterController>();
+            if (playerController != null) 
+            {
+                playerController.enabled = false; // Freezes the player in place
+            }
+
+            // Optional: Disable the movement script itself if needed
+            MonoBehaviour movementScript = other.GetComponent("PlayerMovement") as MonoBehaviour;
+            if (movementScript != null)
+            {
+                movementScript.enabled = false;
+            }
+
+            // // 2. Call the Lose Screen
+            // if (UIManager.Instance != null)
+            // {
+            //     UIManager.Instance.ShowLoseScreen();
+            //     Debug.Log("Player hit the fire! Movement disabled, showing Lose UI.");
+            // }
+            // else
+            // {
+            //     Debug.LogWarning("UIManager instance not found!");
+            // }
         }
     }
 }
