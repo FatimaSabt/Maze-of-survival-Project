@@ -50,43 +50,16 @@ public class FireTrapController : MonoBehaviour
         }
     }
 
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         // Insert your game over or damage logic here
-    //         Debug.Log("Player stepped in the fire!");
-    //     }
-    // }
-
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // 1. Stop the player from moving
-            CharacterController playerController = other.GetComponent<CharacterController>();
-            if (playerController != null) 
-            {
-                playerController.enabled = false; // Freezes the player in place
-            }
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
-            // Optional: Disable the movement script itself if needed
-            MonoBehaviour movementScript = other.GetComponent("PlayerMovement") as MonoBehaviour;
-            if (movementScript != null)
+            if (playerHealth != null)
             {
-                movementScript.enabled = false;
+                playerHealth.TakeDamage(1);
             }
-
-            // // 2. Call the Lose Screen
-            // if (UIManager.Instance != null)
-            // {
-            //     UIManager.Instance.ShowLoseScreen();
-            //     Debug.Log("Player hit the fire! Movement disabled, showing Lose UI.");
-            // }
-            // else
-            // {
-            //     Debug.LogWarning("UIManager instance not found!");
-            // }
         }
     }
 }
