@@ -22,9 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     private AudioManager audioManager;
 
+    //Animation
+    private Animator animator;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f; 
+            animator.SetBool("isJumping", false);
         }
 
         // 2. Gather Input
@@ -56,11 +61,12 @@ public class PlayerMovement : MonoBehaviour
         // 4. Jump Handling (Spacebar)
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            animator.SetBool("isJumping", true);
             // Physics formula to calculate required upward velocity for a target height
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             audioManager.PlaySFX(audioManager._playerJump);
         }
-
+    
         // 5. Gravity System
         // Updates downwards velocity over time and pushes the character controller downward
         velocity.y += gravity * Time.deltaTime;
@@ -69,6 +75,16 @@ public class PlayerMovement : MonoBehaviour
         // 6. Footstep Sound Logic
         // Plays footstep sounds when the player is moving on the ground.
          HandleFootstepAudio(move);
+
+        // 7. Animation Control
+        if (move.magnitude > 0.1f && isGrounded)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     private void HandleFootstepAudio(Vector3 move)
@@ -80,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && move.magnitude > 0.1f)
         {
+       
             // Decrease the timer based on elapsed time
             footstepTimer -= Time.deltaTime;
 

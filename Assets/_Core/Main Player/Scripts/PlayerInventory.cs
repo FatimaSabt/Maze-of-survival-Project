@@ -3,7 +3,12 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public bool hasKey = false;
+
+    // For per level counting
     public int coinCount = 0;
+
+    // Static variable to keep track of the total number of coins collected across all instances of PlayerInventory
+    public static int totalCoinCount = 0;
 
     public void CollectKey()
     {
@@ -32,6 +37,7 @@ public class PlayerInventory : MonoBehaviour
     public void CollectCoin(int value)
     {
         coinCount += value;
+        totalCoinCount += value;
         Debug.Log("Collected a coin! Total coins: " + coinCount);
     }
 }
