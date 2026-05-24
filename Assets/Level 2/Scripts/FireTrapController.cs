@@ -15,8 +15,6 @@ public class FireTrapController : MonoBehaviour
 
     void Start()
     {
-        // fireParticles.gameObject.SetActive(false);
-        // warningSmoke.gameObject.SetActive(false);
         // Start the trap cycle immediately
         StartCoroutine(TrapCycle());
     }
@@ -52,12 +50,16 @@ public class FireTrapController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Insert your game over or damage logic here
-            Debug.Log("Player stepped in the fire!");
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null && damageCollider.enabled)
+            {
+                playerHealth.TakeDamage(1);
+            }
         }
     }
 }
