@@ -56,7 +56,7 @@ public class FireTrapController : MonoBehaviour
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
-            if (playerHealth != null)
+            if (playerHealth != null && damageCollider.enabled)
             {
                 playerHealth.TakeDamage(1);
             }
