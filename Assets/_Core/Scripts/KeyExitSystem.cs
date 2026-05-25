@@ -3,31 +3,15 @@ using System.Text.RegularExpressions;
 
 public class KeyExitSystem : MonoBehaviour
 {
-    // --- Past Code ----
-    // public string nextLevel;
-    // public SceneController sceneController;
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         PlayerInventory inventory = other.GetComponent<PlayerInventory>();
+    public string nextLevel;
+    public SceneController sceneController;
 
-    //         if (inventory != null && inventory.HasKey())
-    //         {
-    //             inventory.UseKey();
-    //             Destroy(gameObject);
+    AudioManager audioManager;
 
-    //             Debug.Log("Door unlocked! You can exit now.");
-    //             sceneController.LoadNextScene(nextLevel);
-    //         }
-    //         else
-    //         {
-    //             Debug.Log("Door is locked. You need a key.");
-    //         }
-    //     }
-    // }
-
-    // ---- New Code ---
+    void Awake()
+    {
+       audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -37,18 +21,14 @@ public class KeyExitSystem : MonoBehaviour
             if (inventory != null && inventory.HasKey())
             {
                 inventory.UseKey();
-                
-                // Hide the door and disable its collider instead of Destroying it immediately
-                GetComponent<MeshRenderer>().enabled = false;
-                GetComponent<Collider>().enabled = false;
-
-                Debug.Log("Door unlocked! You Win!");
-                
-                // Trigger the Global Win UI
-                UIManager.Instance.ShowWinScreen();
+                Destroy(gameObject);
+                audioManager.PlaySFX(audioManager._exit);
+                Debug.Log("Door unlocked! You can exit now.");
+                sceneController.LoadNextScene(nextLevel);
             }
             else
             {
+                audioManager.PlaySFX(audioManager._doorClosed);
                 Debug.Log("Door is locked. You need a key.");
             }
         }

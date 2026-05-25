@@ -11,13 +11,24 @@ public class SceneController : MonoBehaviour
     
     private void Start()
     {
-         //Get total coin object placed in the current level
-        coins = GameObject.FindGameObjectsWithTag("Coin");
-        Debug.Log("Total coins in the scene: " + coins.Length);
-        // Spawn player at the SpawnPoint in the current scene
-        SpawnPlayerAtSpawnPoint();
-        //Initialize the coin count display for the current level
-        LevelLayout();
+        if (spawnPoint != null && Score != null )
+        {
+            //Get total coin object placed in the current level
+            coins = GameObject.FindGameObjectsWithTag("Coin");
+            if (coins == null || coins.Length == 0)
+            {
+                Debug.LogWarning("No coins found in the scene!");
+            }else
+            {
+                Debug.Log("Coins found in the scene: " + coins.Length);
+                //Initialize the coin count display for the current level
+                LevelLayout();
+            }
+            Debug.Log("Total coins in the scene: " + coins.Length);
+
+            // Spawn player at the SpawnPoint in the current scene
+            SpawnPlayerAtSpawnPoint();
+        }
     }
 
     public void SpawnPlayerAtSpawnPoint()
@@ -37,7 +48,7 @@ public class SceneController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No Player found in the scene!");
+            Debug.LogError("No Player object found in the scene!");
         }
     }
 
