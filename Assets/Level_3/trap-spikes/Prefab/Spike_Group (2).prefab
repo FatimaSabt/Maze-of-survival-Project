@@ -102,7 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorSpikeTrap
   spikes: {fileID: 3528767717224845259}
   hiddenPos: {x: -44.46, y: -2, z: 12.57}
-  raisedPos: {x: -44.46, y: 0, z: 12.57}
   waitTime: 5
   riseSpeed: 10
   lowerSpeed: 4
@@ -140,4 +139,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
+  player: {fileID: 4969770801022130603, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
   damageAmount: 1
