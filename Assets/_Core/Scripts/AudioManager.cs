@@ -19,8 +19,16 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("Traps")]
+    [Header("Arrow Trap")]
     [SerializeField] public AudioClip _arrowTrap;
 
+    [Header("Fire Jet Trap")]
+    [SerializeField] public AudioClip _steam;
+    [SerializeField] public AudioClip _fireTrap;
+
+    [Header("Spike Trap")]
+    [SerializeField] public AudioClip _spikeTrap;
+    
     private void Start()
     {
         _musicSource.clip = _backgroundMusic;
@@ -30,6 +38,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         _sfxSource.PlayOneShot(clip);
+    }
+
+    public void StopSFX()
+    {
+        _sfxSource.Stop();
     }
 
 }

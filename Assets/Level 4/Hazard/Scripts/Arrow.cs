@@ -9,7 +9,7 @@ public class Arrow : MonoBehaviour
     void Awake()
     {
         Destroy(gameObject, 3f);
-                audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
     }
 

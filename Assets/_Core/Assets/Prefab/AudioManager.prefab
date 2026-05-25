@@ -185,8 +185,11 @@ MonoBehaviour:
   _coinCollect: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
   _keyCollect: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   _doorClosed: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
-  _exit: {fileID: 0}
+  _exit: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   _arrowTrap: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+  _steam: {fileID: 8300000, guid: 555a1a60caeff4ad89255abcbaabf5d2, type: 3}
+  _fireTrap: {fileID: 8300000, guid: 2bec36b7cf9c3438f8371ae9d969f004, type: 3}
+  _spikeTrap: {fileID: 8300000, guid: 37c780486cd9f4780bac236caa5d7eb5, type: 3}
 --- !u!1 &7315451277095415165
 GameObject:
   m_ObjectHideFlags: 0
