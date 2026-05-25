@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FloorSpikeTrap : MonoBehaviour
 {
@@ -7,46 +8,53 @@ public class FloorSpikeTrap : MonoBehaviour
     public Vector3 hiddenPos;
     public Vector3 raisedPos;
 
-    public float waitTime;
-
-    public float riseSpeed;
-    public float lowerSpeed ;
-
-    public float activeTime;
+    public float waitTime = 5f;
+    public float riseSpeed = 10f;
+    public float lowerSpeed = 4f;
+    public float activeTime = 2f;
 
     void Start()
     {
-        spikes.position = hiddenPos;
+        // Start the spikes in the hidden local position
+        spikes.localPosition = hiddenPos;
+
+        // Start the trap loop
         StartCoroutine(TrapLoop());
     }
 
-    System.Collections.IEnumerator TrapLoop()
+    IEnumerator TrapLoop()
     {
         while (true)
         {
+            // Wait before activating
             yield return new WaitForSeconds(waitTime);
 
-            // Fast stab upward
+            // Move spikes out
             yield return MoveSpike(raisedPos, riseSpeed);
 
+            // Keep spikes active for a short time
             yield return new WaitForSeconds(activeTime);
 
-            // Slower retract
+            // Move spikes back in
             yield return MoveSpike(hiddenPos, lowerSpeed);
         }
     }
 
-    System.Collections.IEnumerator MoveSpike(Vector3 target, float speed)
+    IEnumerator MoveSpike(Vector3 target, float speed)
     {
-        while (Vector3.Distance(spikes.position, target) > .01f)
+        // Use localPosition here, not position
+        while (Vector3.Distance(spikes.localPosition, target) > 0.01f)
         {
-            spikes.position = Vector3.MoveTowards(
-                spikes.position,
+            spikes.localPosition = Vector3.MoveTowards(
+                spikes.localPosition,
                 target,
                 speed * Time.deltaTime
             );
 
             yield return null;
         }
+
+        // Snap exactly to target local position
+        spikes.localPosition = target;
     }
 }
