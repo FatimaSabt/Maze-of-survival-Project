@@ -62,6 +62,7 @@ public class SceneController : MonoBehaviour
 
     }
 
+    // ----- New Code ----------
     public void RetryLevel()
     {
         // Unpause the game before reloading
@@ -70,6 +71,7 @@ public class SceneController : MonoBehaviour
         // Load the currently active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
+    // -------------------------
 
     public void LoadNextScene( string sceneName)
     {
@@ -86,8 +88,10 @@ public class SceneController : MonoBehaviour
             return;
         }
 
+        // ----- New Code ----------
         // Unpause the game before loading the next scene!
         Time.timeScale = 1f;
+        // -------------------------
 
         //go to scene by scene name
         SceneManager.LoadScene(sceneName);

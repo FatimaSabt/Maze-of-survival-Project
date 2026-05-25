@@ -18,5 +18,14 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player died");
         Destroy(gameObject);
+
+        // ----- New Code ------
+
+        // try this later
+        // // Disable player movement so they freeze in place
+        // GetComponent<PlayerMovement>().enabled = false;
+        
+        // Trigger the Global Lose UI
+        UIManager.Instance.ShowLoseScreen();
     }
 }
