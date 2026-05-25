@@ -40,10 +40,10 @@ public class UIManager : MonoBehaviour
         winPanel.SetActive(true);
         PauseGameAndUnlockCursor();
         
-        // Update Text
-        winCoinsText.text = "Coins: " + coins;
-        winTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
-        winLevelText.text = "Level " + SceneManager.GetActiveScene().name;
+        // // Update Text
+        // winCoinsText.text = "Coins: " + coins;
+        // winTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
+        // winLevelText.text = "Level " + SceneManager.GetActiveScene().name;
     }
 
     public void ShowLoseScreen()
@@ -51,10 +51,10 @@ public class UIManager : MonoBehaviour
         losePanel.SetActive(true);
         PauseGameAndUnlockCursor();
 
-        // Update Text
-        loseCoinsText.text = "Coins: " + coins;
-        loseTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
-        loseLevelText.text = "Level " + SceneManager.GetActiveScene().name;
+        // // Update Text
+        // loseCoinsText.text = "Coins: " + coins;
+        // loseTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
+        // loseLevelText.text = "Level " + SceneManager.GetActiveScene().name;
     }
 
     private void PauseGameAndUnlockCursor()
