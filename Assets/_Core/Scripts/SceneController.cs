@@ -26,7 +26,7 @@ public class SceneController : MonoBehaviour
 
     private void Start()
     {
-        if (spawnPoint != null && Score != null )
+        if (spawnPoint != null )
         {
             //Get total coin object placed in the current level
             coins = GameObject.FindGameObjectsWithTag("Coin");
@@ -80,10 +80,7 @@ public class SceneController : MonoBehaviour
         {
             Score.text =  playerInventory.coinCount + " / " + coins.Length;
         }
-        else
-        {
-            Debug.LogError("Score TextMesh reference is not set!");
-        }
+      
 
 
     }

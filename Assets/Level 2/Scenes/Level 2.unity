@@ -471,6 +471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_Name
       value: Remy
@@ -530,10 +534,6 @@ PrefabInstance:
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -660,6 +660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_Name
       value: Remy (1)
@@ -719,10 +723,6 @@ PrefabInstance:
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1028,6 +1028,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aed72102e83c04707a800eb8908837cf, type: 3}
+--- !u!1 &3919070804794913864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6138516333909790409, guid: aed72102e83c04707a800eb8908837cf, type: 3}
+  m_PrefabInstance: {fileID: 3919070804794913863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5360159078941571768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1137,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8628176883322349066, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 3919070804794913864}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
