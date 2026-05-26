@@ -11,14 +11,16 @@ public class UIManager : MonoBehaviour
     public GameObject losePanel;
 
     [Header("Lvl Complete UI Stats")]
+    public TMP_Text winLevelText;
     public TMP_Text winCoinsText;
     public TMP_Text winTimeText;
-    public TMP_Text winLevelText;
+    
 
     [Header("Lose UI Stats")]
+    public TMP_Text loseLevelText;
     public TMP_Text loseCoinsText;
     public TMP_Text loseTimeText;
-    public TMP_Text loseLevelText;
+    
 
     private void Awake()
     {
@@ -41,9 +43,14 @@ public class UIManager : MonoBehaviour
         PauseGameAndUnlockCursor();
         
         // Update Text
-        winCoinsText.text = $"{collectedCoins} / {lvlCoins}";
-        winTimeText.text = $"Time: {timeTaken.ToString("F1")}s";
         winLevelText.text = levelName;
+        winCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        
+        // Convert the float to a TimeSpan
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
+        // formating the time presentation as 14:54
+        winTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
+        
     }
 
     public void ShowLoseScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
@@ -51,10 +58,15 @@ public class UIManager : MonoBehaviour
         losePanel.SetActive(true);
         PauseGameAndUnlockCursor();
 
-        // Update Text
-        loseCoinsText.text = $"{collectedCoins} / {lvlCoins}";
-        loseTimeText.text = $"Time: {timeTaken.ToString("F1")}s";
+        // Update Texts
         loseLevelText.text = levelName;
+        loseCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        
+        // Convert the float to a TimeSpan
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
+        // formating the time presentation as 14:54
+        loseTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
+        
     }
 
     private void PauseGameAndUnlockCursor()
