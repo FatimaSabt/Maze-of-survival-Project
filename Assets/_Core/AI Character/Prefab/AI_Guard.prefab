@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1e894a95e2a0240a9ba6492da72e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_AI
-  target: {fileID: 0}
+  target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
   catchDistance: 1.5
   maxChaseDistance: 20
   damageAmount: 1
