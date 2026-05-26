@@ -291,8 +291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 147}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 201.89}
+  m_SizeDelta: {x: 854.3459, y: 210.2109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206844069
 MonoBehaviour:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win!
+  m_text: Completed!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -230.59357, y: -123.248535, z: -230.59338, w: 0}
+  m_margin: {x: -2.616623, y: -4.910759, z: 0.864151, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -816,8 +816,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 282}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0009613, y: 369.81}
+  m_SizeDelta: {x: 854.35, y: 125.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532518058
 MonoBehaviour:
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -186.86029, y: -127.22412, z: -194.81165, w: 23.854614}
+  m_margin: {x: -2.3904953, y: 0.21669005, z: -1.6403809, w: -5.2747574}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1090,8 +1090,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33, y: -28}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.004014, y: -67.142}
+  m_SizeDelta: {x: 854.34, y: 93.8911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594613558
 MonoBehaviour:
@@ -1140,12 +1140,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.4
+  m_fontSize: 56
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 56
   m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.5789642, y: -4.9054384, z: -43.843384, w: -20.54261}
+  m_margin: {x: -0.016250627, y: 0.077712, z: 0.11557011, w: -0.38127518}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1227,8 +1227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71}
-  m_SizeDelta: {x: 209.58, y: 53.160004}
+  m_AnchoredPosition: {x: -0.0034485, y: 38.692005}
+  m_SizeDelta: {x: 854.35, y: 117.7761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &680095032 stripped
 Transform:
@@ -1671,14 +1671,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b60ba4b4c454d71818b9bad2ca40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  winPanel: {fileID: 2000729352}
+  lvlCompletePanel: {fileID: 2000729352}
   losePanel: {fileID: 1979895802}
-  winCoinsText: {fileID: 0}
-  winTimeText: {fileID: 0}
-  winLevelText: {fileID: 0}
-  loseCoinsText: {fileID: 0}
-  loseTimeText: {fileID: 0}
-  loseLevelText: {fileID: 0}
+  winCoinsText: {fileID: 377536336}
+  winTimeText: {fileID: 594613558}
+  winLevelText: {fileID: 532518058}
+  loseCoinsText: {fileID: 1564441420}
+  loseTimeText: {fileID: 1075084691}
+  loseLevelText: {fileID: 1408139669}
 --- !u!1 &808824929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189, y: -210}
+  m_AnchoredPosition: {x: -223, y: -210}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841056987
@@ -2010,6 +2010,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: m_Name
+      value: Remy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2061,14 +2069,6 @@ PrefabInstance:
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
-      propertyPath: m_Name
-      value: Remy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
       propertyPath: m_IsActive
@@ -2793,6 +2793,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: m_Name
+      value: Remy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2843,14 +2851,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
-      propertyPath: m_Name
-      value: Remy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
@@ -3488,7 +3488,7 @@ GameObject:
   - component: {fileID: 2000729355}
   - component: {fileID: 2000729354}
   m_Layer: 5
-  m_Name: WinPanel
+  m_Name: LvlCompletePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

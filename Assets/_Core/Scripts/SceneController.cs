@@ -5,10 +5,25 @@ using TMPro;
 
 public class SceneController : MonoBehaviour
 {
+    // ----- New Code ----------
+
+    // make SceneController as Singleton
+    public static SceneController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+
+        coins = GameObject.FindGameObjectsWithTag("Coin");
+    } 
+
+    // -------------------------  
+    
     private GameObject[] coins; // Array to hold all coin objects in the scene
     public  GameObject spawnPoint; // Reference to the spawn point in the scene
     public TextMeshProUGUI Score; // Reference to the TextMeshPro for displaying coin count
-    
+    internal static readonly int Coins;
+
     private void Start()
     {
         if (spawnPoint != null && Score != null )
@@ -74,6 +89,14 @@ public class SceneController : MonoBehaviour
     }
 
     // ----- New Code ----------
+
+    // a getter to get total number of coins in the level
+    public int LvlCoins 
+    { 
+        get { return coins != null ? coins.Length : 0; } 
+    }
+
+    // method to restart the current level
     public void RetryLevel()
     {
         // Unpause the game before reloading
@@ -82,6 +105,7 @@ public class SceneController : MonoBehaviour
         // Load the currently active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
+
     // -------------------------
 
     public void LoadNextScene( string sceneName)

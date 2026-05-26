@@ -7,10 +7,10 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [Header("UI Panels")]
-    public GameObject winPanel;
+    public GameObject lvlCompletePanel;
     public GameObject losePanel;
 
-    [Header("Win UI Stats")]
+    [Header("Lvl Complete UI Stats")]
     public TMP_Text winCoinsText;
     public TMP_Text winTimeText;
     public TMP_Text winLevelText;
@@ -30,31 +30,31 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         // Ensure panels are hidden and time is normal at the start of the level
-        winPanel.SetActive(false);
+        lvlCompletePanel.SetActive(false);
         losePanel.SetActive(false);
         Time.timeScale = 1f; 
     }
 
-    public void ShowWinScreen()
+    public void ShowLvlCompleteScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
     {
-        winPanel.SetActive(true);
+        lvlCompletePanel.SetActive(true);
         PauseGameAndUnlockCursor();
         
-        // // Update Text
-        // winCoinsText.text = "Coins: " + coins;
-        // winTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
-        // winLevelText.text = "Level " + SceneManager.GetActiveScene().name;
+        // Update Text
+        winCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        winTimeText.text = $"Time: {timeTaken.ToString("F1")}s";
+        winLevelText.text = levelName;
     }
 
-    public void ShowLoseScreen()
+    public void ShowLoseScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
     {
         losePanel.SetActive(true);
         PauseGameAndUnlockCursor();
 
-        // // Update Text
-        // loseCoinsText.text = "Coins: " + coins;
-        // loseTimeText.text = "Time: " + timeTaken.ToString("F1") + "s";
-        // loseLevelText.text = "Level " + SceneManager.GetActiveScene().name;
+        // Update Text
+        loseCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        loseTimeText.text = $"Time: {timeTaken.ToString("F1")}s";
+        loseLevelText.text = levelName;
     }
 
     private void PauseGameAndUnlockCursor()
