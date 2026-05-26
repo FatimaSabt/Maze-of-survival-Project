@@ -1,0 +1,80 @@
+using TMPro;
+using UnityEngine;
+
+public class UIManager : MonoBehaviour
+{
+    // Singleton instance so any script can call this easily
+    public static UIManager Instance;
+
+    [Header("UI Panels")]
+    public GameObject lvlCompletePanel;
+    public GameObject losePanel;
+
+    [Header("Lvl Complete UI Stats")]
+    public TMP_Text winLevelText;
+    public TMP_Text winCoinsText;
+    public TMP_Text winTimeText;
+    
+
+    [Header("Lose UI Stats")]
+    public TMP_Text loseLevelText;
+    public TMP_Text loseCoinsText;
+    public TMP_Text loseTimeText;
+    
+
+    private void Awake()
+    {
+        // Set up the Singleton
+        if (Instance == null) { Instance = this; }
+        else { Destroy(gameObject); }
+    }
+
+    private void Start()
+    {
+        // Ensure panels are hidden and time is normal at the start of the level
+        lvlCompletePanel.SetActive(false);
+        losePanel.SetActive(false);
+        Time.timeScale = 1f; 
+    }
+
+    public void ShowLvlCompleteScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
+    {
+        lvlCompletePanel.SetActive(true);
+        PauseGameAndUnlockCursor();
+        
+        // Update Text
+        winLevelText.text = levelName;
+        winCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        
+        // Convert the float to a TimeSpan
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
+        // formating the time presentation as 14:54
+        winTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
+        
+    }
+
+    public void ShowLoseScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
+    {
+        losePanel.SetActive(true);
+        PauseGameAndUnlockCursor();
+
+        // Update Texts
+        loseLevelText.text = levelName;
+        loseCoinsText.text = $"{collectedCoins} / {lvlCoins}";
+        
+        // Convert the float to a TimeSpan
+        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
+        // formating the time presentation as 14:54
+        loseTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
+        
+    }
+
+    private void PauseGameAndUnlockCursor()
+    {
+        Time.timeScale = 0f; // Pauses the game world
+        
+        // Unlocks the mouse so the player can click "Retry" or "Next Level"
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+}
