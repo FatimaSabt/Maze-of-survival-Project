@@ -1,122 +1,102 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 public class Enemy_AI : MonoBehaviour
 {
     private NavMeshAgent agent;
 
-    public GameObject target; // Drag the player here
-    public float sightDistance = 15f; // How far the AI can see
-    public float catchDistance = 1.5f; // Distance needed to catch player
+    [Header("Player Settings")]
+    public GameObject target; // Drag Remy/player here
+
+    [Header("AI Settings")]
+    public float catchDistance = 1.5f; // Distance needed to damage player
+    public float maxChaseDistance = 20f; // AI stops chasing if player is farther than this
+    public int damageAmount = 1; // Damage caused by AI
 
     private Vector3 originalPosition; // AI starting position
     private Quaternion originalRotation; // AI starting rotation
 
-    private bool isChasing = false; // AI only chases after player enters trigger area
+    private bool isChasing = false;
+    private bool hasDamagedPlayer = false;
 
     void Start()
     {
-        // Get the NavMeshAgent component
+        // 1. Get the NavMeshAgent component
         agent = GetComponent<NavMeshAgent>();
 
-        // Save the AI's original spawn position
+        // 2. Save the AI's original position and rotation
         originalPosition = transform.position;
         originalRotation = transform.rotation;
     }
 
     void Update()
     {
-        // Only run this if the AI has been activated
+        // 1. Stop if Remy is not assigned
+        if (target == null)
+        {
+            return;
+        }
+
+        // 2. Only chase after the trigger activates the AI
         if (isChasing == true)
         {
-            // Check if the AI can still see the player
-            if (CanSeePlayer())
+            // 3. Check distance between AI and Remy
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+
+            // 4. Stop chasing if Remy is too far away
+            if (distance > maxChaseDistance)
             {
-                // Follow the player
-                agent.destination = target.transform.position;
-
-                // Check if AI is close enough to catch the player
-                float distance = Vector3.Distance(transform.position, target.transform.position);
-
-                if (distance <= catchDistance)
-                {
-                    PlayerCaught();
-                }
+                StopChasing();
+                return;
             }
-            else
+
+            // 5. Follow Remy using NavMesh pathfinding
+            agent.SetDestination(target.transform.position);
+
+            // 6. Damage Remy if close enough
+            if (distance <= catchDistance && hasDamagedPlayer == false)
             {
-                // If player is out of sight, return AI to original place
-                RespawnEnemy();
+                DamagePlayer();
             }
         }
     }
 
-    bool CanSeePlayer()
+    void DamagePlayer()
     {
-        // Direction from AI to player
-        Vector3 directionToPlayer = target.transform.position - transform.position;
+        // 1. Get PlayerHealth from Remy
+        PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
 
-        // Check distance first
-        if (directionToPlayer.magnitude > sightDistance)
+        // 2. Damage Remy if the script exists
+        if (playerHealth != null)
         {
-            return false;
+            playerHealth.TakeDamage(damageAmount);
         }
 
-        RaycastHit hit;
-
-        // Cast a ray from AI toward the player
-        if (Physics.Raycast(transform.position, directionToPlayer, out hit, sightDistance))
-        {
-            // If the ray hits the player, AI can see them
-            if (hit.collider.CompareTag("Remy"))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        // 3. Prevent repeated instant damage
+        hasDamagedPlayer = true;
     }
 
-    void RespawnEnemy()
+    void StopChasing()
     {
-        // Stop chasing
+        // 1. Stop chasing the player
         isChasing = false;
 
-        // Stop the NavMeshAgent before moving it manually
+        // 2. Stop the AI movement
         agent.ResetPath();
 
-        // Disable agent temporarily so we can teleport it
-        agent.enabled = false;
+        // 3. Allow damage again next time chase starts
+        hasDamagedPlayer = false;
 
-        // Move AI back to original place
-        transform.position = originalPosition;
-        transform.rotation = originalRotation;
-
-        // Enable agent again
-        agent.enabled = true;
-    }
-
-    void PlayerCaught()
-    {
-        // Restart the current scene when the player is caught
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // Start chasing when player enters the AI activation area
-        if (other.CompareTag("Remy"))
-        {
-            isChasing = true;
-        }
+        // Optional: send AI back to its starting position
+        agent.SetDestination(originalPosition);
     }
 
     public void ActivateChase()
     {
-        // Start chasing the player
+        // 1. Start chasing Remy
         isChasing = true;
+
+        // 2. Allow AI to damage Remy again
+        hasDamagedPlayer = false;
     }
 }
