@@ -115,7 +115,8 @@ public class SceneController : MonoBehaviour
         int sceneLevel = match.Success ? int.Parse(match.Value) : -1;
         if (sceneLevel < 0)
         {
-            Debug.LogError("Invalid scene name: " + sceneName);
+            // If the scene name doesn't contain a valid level number, go to main menu instead
+            SceneManager.LoadScene("MainMenu");
             return;
         }else if (sceneLevel > 5)
         {

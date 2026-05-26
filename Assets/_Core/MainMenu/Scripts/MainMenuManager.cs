@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
         sceneController = FindFirstObjectByType<SceneController>();
         if(playButton != null)
         {
-            playButton.onClick.AddListener(() => PlayGame("Level_3"));
+            playButton.onClick.AddListener(() => PlayGame("Level 1"));
         }
     }
 
