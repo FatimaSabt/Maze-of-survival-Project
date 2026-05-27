@@ -28238,7 +28238,18 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
 --- !u!114 &1054849368 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7127438896242930393, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
+  m_CorrespondingSourceObject: {fileID: 41556053153233156, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
+  m_PrefabInstance: {fileID: 1054849367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1054849369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8686078640650896681, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
   m_PrefabInstance: {fileID: 1054849367}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -52473,6 +52484,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
       propertyPath: Score
+      value: 
+      objectReference: {fileID: 1054849369}
+    - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+      propertyPath: KeyText
       value: 
       objectReference: {fileID: 1054849368}
     - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
