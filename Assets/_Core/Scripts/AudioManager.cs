@@ -3,8 +3,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Sources")]
-    [SerializeField]  AudioSource _musicSource;
-    [SerializeField]  AudioSource _sfxSource;
+    [SerializeField] private AudioSource _musicSource;
+    [SerializeField] private AudioSource _sfxSource;
 
     [Header("Audio Clips")]
     [SerializeField] public AudioClip _backgroundMusic;
@@ -17,32 +17,102 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip _doorClosed;
     [SerializeField] public AudioClip _exit;
 
-
     [Header("Traps")]
-    [Header("Arrow Trap")]
     [SerializeField] public AudioClip _arrowTrap;
-
-    [Header("Fire Jet Trap")]
     [SerializeField] public AudioClip _steam;
     [SerializeField] public AudioClip _fireTrap;
-
-    [Header("Spike Trap")]
     [SerializeField] public AudioClip _spikeTrap;
-    
-    private void Start()
+
+    private bool isMusicOn = true;
+    private bool isSoundOn = true;
+
+    void Start()
     {
-        _musicSource.clip = _backgroundMusic;
+        isMusicOn = PlayerInventory.isMusicOn;
+        isSoundOn = PlayerInventory.isSoundOn;
+
+        if (isMusicOn)
+        {
+            PlayMusic(_backgroundMusic);
+        }
+        else
+        {
+            StopMusic();
+        }
+
+        if (!isSoundOn)
+        {
+            StopSFX();
+        }
+    }
+
+    public void SetMusicState(bool state)
+    {
+        isMusicOn = state;
+
+        if (isMusicOn)
+        {
+            if (!_musicSource.isPlaying)
+            {
+                PlayMusic(_backgroundMusic);
+            }
+        }
+        else
+        {
+            StopMusic();
+        }
+    }
+
+    public void SetSoundState(bool state)
+    {
+        isSoundOn = state;
+
+        if (!isSoundOn)
+        {
+            StopSFX();
+        }
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (clip == null || _musicSource == null)
+        {
+            return;
+        }
+
+        _musicSource.clip = clip;
+        _musicSource.loop = true;
         _musicSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        if (_musicSource != null)
+        {
+            _musicSource.Stop();
+        }
     }
 
     public void PlaySFX(AudioClip clip)
     {
+        if (!isSoundOn)
+        {
+            return;
+        }
+
+        if (clip == null || _sfxSource == null)
+        {
+            return;
+        }
+
         _sfxSource.PlayOneShot(clip);
     }
 
     public void StopSFX()
     {
-        _sfxSource.Stop();
+        if (_sfxSource != null)
+        {
+            _sfxSource.Stop();
+        }
     }
-
 }

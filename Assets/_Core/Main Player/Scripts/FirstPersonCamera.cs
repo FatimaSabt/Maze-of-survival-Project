@@ -8,12 +8,13 @@ public class FirstPersonCamera : MonoBehaviour
 
     // Variables
     public Transform player;
-    public float mouseSensitivity = 2f;
-    float cameraVerticalRotation = 0f;
+    public static float mouseSensitivity = 15.0f;
+    private float cameraVerticalRotation = 0f;
 
 
     void Start()
     {
+        Debug.Log("FirstPersonCamera sensitivity: " + mouseSensitivity);
         // Lock and Hide the Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
