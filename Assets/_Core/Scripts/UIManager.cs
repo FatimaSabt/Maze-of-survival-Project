@@ -6,6 +6,9 @@ public class UIManager : MonoBehaviour
     // Singleton instance so any script can call this easily
     public static UIManager Instance;
 
+    [Header("Canvas")]
+    public Canvas scoreCanvas;
+
     [Header("UI Panels")]
     public GameObject lvlCompletePanel;
     public GameObject losePanel;
@@ -39,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowLvlCompleteScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
     {
+        scoreCanvas.enabled = false;
         lvlCompletePanel.SetActive(true);
         PauseGameAndUnlockCursor();
         
@@ -55,6 +59,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowLoseScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
     {
+        scoreCanvas.enabled = false;
         losePanel.SetActive(true);
         PauseGameAndUnlockCursor();
 

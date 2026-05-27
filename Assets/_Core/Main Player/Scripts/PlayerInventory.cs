@@ -10,6 +10,21 @@ public class PlayerInventory : MonoBehaviour
     // Static variable to keep track of the total number of coins collected across all instances of PlayerInventory
     public static int totalCoinCount = 0;
 
+
+    //Hold player settings
+    public static bool isMusicOn = true;
+    public static bool isSoundOn = true;
+    public static bool isFullScreen = true;
+    public static float sensitivity = 15.0f;
+
+
+    //Camera refrence for sensitivity adjustment
+    public FirstPersonCamera playerCamera;
+
+    void Start()
+    {
+        ChangeSensitivity(sensitivity);
+    }
     public void CollectKey()
     {
         hasKey = true;
@@ -39,5 +54,10 @@ public class PlayerInventory : MonoBehaviour
         coinCount += value;
         totalCoinCount += value;
         Debug.Log("Collected a coin! Total coins: " + coinCount);
+    }
+
+    public void ChangeSensitivity(float newSensitivity)
+    {
+        FirstPersonCamera.mouseSensitivity = newSensitivity;
     }
 }
