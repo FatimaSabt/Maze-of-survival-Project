@@ -65,9 +65,13 @@ PrefabInstance:
       value: AI_Guard
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 285f3dedc2ab0451d9453004d0a594d7, type: 3}
-      propertyPath: m_Controller
+      propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 285f3dedc2ab0451d9453004d0a594d7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7a860bec28924438e827b094a8e4eac1, type: 2}
     - target: {fileID: 5866666021909216657, guid: 285f3dedc2ab0451d9453004d0a594d7, type: 3}
       propertyPath: m_CullingMode
       value: 1
@@ -75,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 285f3dedc2ab0451d9453004d0a594d7, type: 3}
       propertyPath: m_AnimatePhysics
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 285f3dedc2ab0451d9453004d0a594d7, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

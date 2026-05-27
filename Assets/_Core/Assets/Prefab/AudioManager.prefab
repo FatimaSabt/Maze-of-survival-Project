@@ -51,7 +51,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 152
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -184,7 +184,7 @@ MonoBehaviour:
   _playerRun: {fileID: 8300000, guid: b9e22b71c3ab12b4cac7d74e269d9924, type: 3}
   _coinCollect: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
   _keyCollect: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
-  _doorClosed: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+  _doorClosed: {fileID: 8300000, guid: 669a3b2e88d6c47a18ce1e3e94eb17a2, type: 3}
   _exit: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
   _arrowTrap: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
   _steam: {fileID: 8300000, guid: 555a1a60caeff4ad89255abcbaabf5d2, type: 3}
@@ -235,7 +235,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.879
   m_Pitch: 1
   Loop: 1
   Mute: 0

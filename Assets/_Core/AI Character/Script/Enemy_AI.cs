@@ -19,6 +19,8 @@ public class Enemy_AI : MonoBehaviour
     private bool isChasing = false;
     private bool hasDamagedPlayer = false;
 
+    Animator animator; 
+
     void Start()
     {
         // 1. Get the NavMeshAgent component
@@ -27,6 +29,9 @@ public class Enemy_AI : MonoBehaviour
         // 2. Save the AI's original position and rotation
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+
+        animator = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -61,6 +66,8 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
+    
+
     void DamagePlayer()
     {
         // 1. Get PlayerHealth from Remy
@@ -89,6 +96,9 @@ public class Enemy_AI : MonoBehaviour
 
         // Optional: send AI back to its starting position
         agent.SetDestination(originalPosition);
+
+        animator.SetBool("isChasing", false);
+
     }
 
     public void ActivateChase()
@@ -98,5 +108,8 @@ public class Enemy_AI : MonoBehaviour
 
         // 2. Allow AI to damage Remy again
         hasDamagedPlayer = false;
+
+        animator.SetBool("isChasing", true);
+
     }
 }

@@ -5,7 +5,14 @@ using TMPro;
 
 public class SceneController : MonoBehaviour
 {
-    // ----- New Code ----------
+    private float levelTimer = 0f;
+    private GameObject[] coins; // Array to hold all coin objects in the scene
+    public  GameObject spawnPoint; // Reference to the spawn point in the scene
+    public TextMeshProUGUI Score; // Reference to the TextMeshPro for displaying coin count
+    public TextMeshProUGUI KeyText; // Reference to the TextMeshPro for displaying key collected
+    public TextMeshProUGUI timer; // Reference to the TextMeshPro for displaying timer
+
+    internal static readonly int Coins;
 
     // make SceneController as Singleton
     public static SceneController Instance;
@@ -17,13 +24,7 @@ public class SceneController : MonoBehaviour
         coins = GameObject.FindGameObjectsWithTag("Coin");
     } 
 
-    // -------------------------  
     
-    private GameObject[] coins; // Array to hold all coin objects in the scene
-    public  GameObject spawnPoint; // Reference to the spawn point in the scene
-    public TextMeshProUGUI Score; // Reference to the TextMeshPro for displaying coin count
-    public TextMeshProUGUI KeyText; // Reference to the TextMeshPro for displaying key collected
-    internal static readonly int Coins;
 
     private void Start()
     {
@@ -45,8 +46,25 @@ public class SceneController : MonoBehaviour
             // Spawn player at the SpawnPoint in the current scene
             SpawnPlayerAtSpawnPoint();
         }
+    
     }
 
+    private void Update()
+    {
+        UpdateTimer();
+    }
+
+    private void UpdateTimer()
+    {
+        levelTimer += Time.deltaTime;
+
+        if (timer != null)
+        {
+            System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(levelTimer);
+            timer.text = timeSpan.ToString(@"mm\:ss");
+        }
+    }
+    
     public void SpawnPlayerAtSpawnPoint()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -88,7 +106,12 @@ public class SceneController : MonoBehaviour
             KeyText.text = playerInventory.hasKey ? "1 / 1" : "0 / 1";
         }
         // -------------------------
-        
+
+        //Show timer
+        if (timer != null)
+        {
+            timer.text = " 00:00";
+        }
     }
 
     // ----- New Code ----------

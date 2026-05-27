@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     public Button playButton; 
+    public Button playAIModeButton;
 
     SceneController sceneController;
 
@@ -14,6 +15,10 @@ public class MainMenuManager : MonoBehaviour
         if(playButton != null)
         {
             playButton.onClick.AddListener(() => PlayGame("Level 1"));
+        }
+        if (playAIModeButton != null)
+        {
+            playAIModeButton.onClick.AddListener(() => PlayAIMode("Level_1_AI"));
         }
     }
 
@@ -28,4 +33,23 @@ public class MainMenuManager : MonoBehaviour
             sceneController.LoadNextScene(sceneName);
         }
     }
+
+    public void PlayAIMode(string sceneName)
+    {
+        if (sceneController == null)
+        {
+            sceneController = FindFirstObjectByType<SceneController>();
+        }
+        else
+        {
+            sceneController.LoadNextScene(sceneName);
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
 }

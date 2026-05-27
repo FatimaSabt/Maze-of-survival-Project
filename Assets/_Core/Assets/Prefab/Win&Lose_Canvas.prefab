@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b60ba4b4c454d71818b9bad2ca40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  scoreCanvas: {fileID: 0}
+  scoreCanvas: {fileID: 5567741455793339498, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
   lvlCompletePanel: {fileID: 1629799691926910551}
   losePanel: {fileID: 3539792041534048055}
   winLevelText: {fileID: 4354511620202234087}

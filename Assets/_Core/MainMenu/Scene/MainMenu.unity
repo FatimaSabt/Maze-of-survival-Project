@@ -3803,6 +3803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   playButton: {fileID: 1485515495}
+  playAIModeButton: {fileID: 820767095}
 --- !u!1 &907948481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   spawnPoint: {fileID: 0}
   Score: {fileID: 0}
+  KeyText: {fileID: 0}
+  timer: {fileID: 0}
 --- !u!4 &995865399
 Transform:
   m_ObjectHideFlags: 0
