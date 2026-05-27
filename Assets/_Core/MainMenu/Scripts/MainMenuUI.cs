@@ -6,6 +6,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject settingsPanel;
     public GameObject howToPlayPanel;
+    public GameObject creditsPanel;
 
 
     void Start()
@@ -16,8 +17,9 @@ public class MainMenuUI : MonoBehaviour
         // Hide other panels at the start
         settingsPanel.SetActive(false);
         howToPlayPanel.SetActive(false);
+        creditsPanel.SetActive(false);
 
-  
+
     }
 
     public void OpenSettings()
@@ -26,6 +28,7 @@ public class MainMenuUI : MonoBehaviour
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(true);
         howToPlayPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void OpenHowToPlay()
@@ -34,6 +37,15 @@ public class MainMenuUI : MonoBehaviour
         mainMenuPanel.SetActive(false);
         settingsPanel.SetActive(false);
         howToPlayPanel.SetActive(true);
+        creditsPanel.SetActive(false);
+    }
+    public void OpenCredits()
+    {
+        // Show how to play screen only
+        mainMenuPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        howToPlayPanel.SetActive(false);
+        creditsPanel.SetActive(true);
     }
 
     public void BackToMainMenu()
@@ -42,5 +54,6 @@ public class MainMenuUI : MonoBehaviour
         mainMenuPanel.SetActive(true);
         settingsPanel.SetActive(false);
         howToPlayPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 }
