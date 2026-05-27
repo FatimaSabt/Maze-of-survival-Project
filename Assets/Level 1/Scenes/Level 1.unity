@@ -854,6 +854,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+--- !u!114 &429819400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+  m_PrefabInstance: {fileID: 429819399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deaf5f754471e4b50858d5984a2e0f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
 --- !u!1 &522962121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,6 +2982,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3336044230181647601, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 429819400}
+    - target: {fileID: 3336044230181647601, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777286020139499817, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 429819400}
+    - target: {fileID: 3777286020139499817, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 5606136467316238364, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
       propertyPath: m_Name
       value: Win&Lose_Canvas
