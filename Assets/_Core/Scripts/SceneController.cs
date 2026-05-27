@@ -22,6 +22,7 @@ public class SceneController : MonoBehaviour
     private GameObject[] coins; // Array to hold all coin objects in the scene
     public  GameObject spawnPoint; // Reference to the spawn point in the scene
     public TextMeshProUGUI Score; // Reference to the TextMeshPro for displaying coin count
+    public TextMeshProUGUI KeyText; // Reference to the TextMeshPro for displaying key collected
     internal static readonly int Coins;
 
     private void Start()
@@ -73,16 +74,21 @@ public class SceneController : MonoBehaviour
         //Get total coins in player inventory for current level
         PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         Debug.Log("Player's current coin count: " + playerInventory.coinCount);
-
-        //Formatic way to display the coin count in the UI can be implemented here, 
+ 
         //"cointCount / coins.Length"
         if (Score != null)
         {
             Score.text =  playerInventory.coinCount + " / " + coins.Length;
         }
-      
 
-
+        // ----- New Code ----------
+        // Key UI
+        if (KeyText != null)
+        {
+            KeyText.text = playerInventory.hasKey ? "1 / 1" : "0 / 1";
+        }
+        // -------------------------
+        
     }
 
     // ----- New Code ----------

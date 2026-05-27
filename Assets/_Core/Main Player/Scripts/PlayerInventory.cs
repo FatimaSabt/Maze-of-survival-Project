@@ -29,6 +29,10 @@ public class PlayerInventory : MonoBehaviour
     {
         hasKey = true;
         Debug.Log("Key collected!");
+
+        // ----- New Code ----------
+        SceneController.Instance.LevelLayout();
+        // -------------------------
     }
 
     public bool HasKey()
@@ -42,6 +46,10 @@ public class PlayerInventory : MonoBehaviour
         {
             hasKey = false;
             Debug.Log("Key used!");
+
+            // ----- New Code ----------
+            SceneController.Instance.LevelLayout();
+            // -------------------------
         }
         else
         {
