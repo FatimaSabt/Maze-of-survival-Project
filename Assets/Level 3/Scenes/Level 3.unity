@@ -59160,6 +59160,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4969770799936164323}
+    - target: {fileID: 7889335251658861457, guid: f5906dcadaac07c48ba97aa3b1baa02d, type: 3}
+      propertyPath: hiddenPos.y
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

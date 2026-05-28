@@ -25612,7 +25612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
-  player: {fileID: 0}
+  player: {fileID: 1230650925}
   damageAmount: 1
 --- !u!65 &501586412
 BoxCollider:
@@ -31690,7 +31690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
-  player: {fileID: 0}
+  player: {fileID: 1230650925}
   damageAmount: 1
 --- !u!65 &565478933
 BoxCollider:
@@ -46889,7 +46889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
-  player: {fileID: 0}
+  player: {fileID: 1230650925}
   damageAmount: 1
 --- !u!65 &984566087
 BoxCollider:
@@ -59134,6 +59134,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5813733631441251539, guid: a5b08bcb4ab99574ea6d01e65490d569, type: 3}
   m_PrefabInstance: {fileID: 1227910870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1230650925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+  m_PrefabInstance: {fileID: 1617720942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1230650927 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 2489758267721262748, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+  m_PrefabInstance: {fileID: 1617720942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232159691
 GameObject:
   m_ObjectHideFlags: 0
@@ -70476,7 +70486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
-  player: {fileID: 0}
+  player: {fileID: 1230650925}
   damageAmount: 1
 --- !u!65 &1430573669
 BoxCollider:
@@ -87080,6 +87090,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3447496957497948763, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447496957497948763, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1230650927}
     - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_Name
       value: Remy
@@ -99995,7 +100013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c2c335c822a7409dcf943456ac304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeDamage
-  player: {fileID: 0}
+  player: {fileID: 1230650925}
   damageAmount: 1
 --- !u!65 &1892419312
 BoxCollider:
