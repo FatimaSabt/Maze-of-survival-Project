@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Level 4/Scene/Level 4.unity
     guid: b3c02ee0bb0004aac92c405a46bf9bbb
   - enabled: 1
+    path: Assets/Level 5/Scenes/Level 5.unity
+    guid: 60dbede8ddae4e6418df54fa8d9e69ed
+  - enabled: 1
     path: Assets/Level 1/Scenes/Level_1_AI/Level_1_AI.unity
     guid: c4ef0b956d62d63418d92659cd9c6505
   - enabled: 1
@@ -35,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level 4/Scene/Level_4_AI/Level_4_AI.unity
     guid: 3794000b3da997f4cb129a10dfedac72
+  - enabled: 1
+    path: Assets/Level 5/Scenes/Level_5_AI/Level_5_AI.unity
+    guid: eeeac8289ca8be145a0190bf19d701df
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a54dc6bcc66f14162a54de12deb726b6, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
