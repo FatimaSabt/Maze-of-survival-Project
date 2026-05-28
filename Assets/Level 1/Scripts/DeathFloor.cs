@@ -8,6 +8,25 @@ public class DeathFloor : MonoBehaviour
     public bool reloadSceneOnDeath = false;     // Set true to restart the scene on death
     public string deathSceneName = "";          // Optional: load a specific scene on death
 
+
+    public AudioSource audioSource;
+
+    AudioManager audioManager;
+     void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    private void Update()
+    {
+        if (audioManager != null)
+        {
+           
+            audioSource.enabled = audioManager.isSoundOn;
+            
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
