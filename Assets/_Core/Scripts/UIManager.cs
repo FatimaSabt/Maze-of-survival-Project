@@ -67,17 +67,25 @@ public class UIManager : MonoBehaviour
         
         // Extract the level number from the scene name (e.g., "Level_5" -> 5)
         System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(levelName, @"\d+");
-        int sceneLevel = match.Success ? int.Parse(match.Value) : -1;// Route to the correct panel based on the level number
+        int sceneLevel = match.Success ? int.Parse(match.Value) : -1;
         
+        // Route to the correct panel based on the level number
         if (sceneLevel == 5)
         {
             winPanel.SetActive(true);
             
-            CoinsText.text = $"{collectedCoins} / {lvlCoins}";
-            
-            // Convert the float to a TimeSpan
-            System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
-            TimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
+            // Display Total Coins
+            if (CoinsText != null)
+            {
+                CoinsText.text = $"{PlayerInventory.totalCoinCount}";
+            }
+
+            // Display Total Time
+            if (TimeText != null)
+            {
+                System.TimeSpan totalTimeSpan = System.TimeSpan.FromSeconds(PlayerInventory.totalTimeTaken);
+                TimeText.text = $"Time: {totalTimeSpan.ToString(@"hh\:mm\:ss")}";
+            }
         }
         else
         {
@@ -92,16 +100,6 @@ public class UIManager : MonoBehaviour
             System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
             winTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
         }
-
-        // // Update Text
-        // winLevelText.text = levelName;
-        // winCoinsText.text = $"{collectedCoins} / {lvlCoins}";
-        
-        // // Convert the float to a TimeSpan
-        // System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(timeTaken);
-        // // formating the time presentation as 14:54
-        // winTimeText.text = $"Time: {timeSpan.ToString(@"mm\:ss")}";
-        
     }
 
     public void ShowLoseScreen(int collectedCoins, int lvlCoins, float timeTaken, string levelName)
@@ -112,8 +110,12 @@ public class UIManager : MonoBehaviour
 
         PauseGameAndUnlockCursor();
 
+        // Extract the level number from the scene name (e.g., "Level_5" -> 5)
+        System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(levelName, @"\d+");
+        int sceneLevel = match.Success ? int.Parse(match.Value) : -1;
+        
         // Update Texts
-        loseLevelText.text = levelName;
+        loseLevelText.text = $"Level {sceneLevel}";
         loseCoinsText.text = $"{collectedCoins} / {lvlCoins}";
         
         // Convert the float to a TimeSpan

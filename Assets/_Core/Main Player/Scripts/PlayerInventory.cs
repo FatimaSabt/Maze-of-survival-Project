@@ -9,6 +9,9 @@ public class PlayerInventory : MonoBehaviour
 
     // Static variable to keep track of the total number of coins collected across all instances of PlayerInventory
     public static int totalCoinCount = 0;
+    
+    // Static variable to track total time across all levels
+    public static float totalTimeTaken = 0f;
 
 
     //Hold player settings

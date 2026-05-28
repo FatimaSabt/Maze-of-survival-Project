@@ -3145,7 +3145,7 @@ MonoBehaviour:
   scoreCanvas: {fileID: 5567741455793339498, guid: ac0654d4b2aff44aca7052c3fc50e222, type: 3}
   lvlCompletePanel: {fileID: 6226410085744858337}
   losePanel: {fileID: 6992296251868594397}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 4100130918618863825}
   mazeBackground: {fileID: 1879219779558592740}
   background: {fileID: 6555121663398801957}
   outlineBackground: {fileID: 2355897580363499175}
@@ -3155,8 +3155,8 @@ MonoBehaviour:
   loseLevelText: {fileID: 8076631116873570313}
   loseCoinsText: {fileID: 4905462289484352575}
   loseTimeText: {fileID: 3913892432451755736}
-  CoinsText: {fileID: 0}
-  TimeText: {fileID: 0}
+  CoinsText: {fileID: 4195522778097262283}
+  TimeText: {fileID: 4914189782619940079}
 --- !u!1 &5246964426959560827
 GameObject:
   m_ObjectHideFlags: 0

@@ -158,4 +158,10 @@ public class SceneController : MonoBehaviour
         //go to scene by scene name
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exiting game...");
+        Application.Quit();
+    }
 }

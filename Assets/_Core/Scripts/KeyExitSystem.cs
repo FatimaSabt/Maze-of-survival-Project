@@ -29,20 +29,16 @@ public class KeyExitSystem : MonoBehaviour
             {
                 inventory.UseKey();
                 Destroy(gameObject);
-               
-
-                audioManager.PlaySFX(audioManager._exit);
-                
-                
+                audioManager.PlaySFX(audioManager._exit); 
                 Debug.Log("Door unlocked! You can exit now.");
-                
-                //sceneController.LoadNextScene(nextLevel);
 
                 int currentCoins = inventory.coinCount;
                 int maxCoins = SceneController.Instance.LvlCoins;
                 float timeTaken = Time.timeSinceLevelLoad;
                 string levelName = SceneManager.GetActiveScene().name;
 
+                // Add this level's time to the global total
+                PlayerInventory.totalTimeTaken += timeTaken;
                 
                 // Trigger the Global Level Complete UI
                 UIManager.Instance.ShowLvlCompleteScreen(currentCoins, maxCoins, timeTaken, levelName);
