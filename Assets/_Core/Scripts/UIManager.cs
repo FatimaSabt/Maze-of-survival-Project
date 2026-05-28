@@ -13,6 +13,12 @@ public class UIManager : MonoBehaviour
     public GameObject lvlCompletePanel;
     public GameObject losePanel;
 
+    [Header("Backgrounds Panels")]
+    public GameObject mazeBackground;
+    public GameObject background;
+    public GameObject outlineBackground;
+    
+
     [Header("Lvl Complete UI Stats")]
     public TMP_Text winLevelText;
     public TMP_Text winCoinsText;
@@ -37,6 +43,10 @@ public class UIManager : MonoBehaviour
         // Ensure panels are hidden and time is normal at the start of the level
         lvlCompletePanel.SetActive(false);
         losePanel.SetActive(false);
+        mazeBackground.SetActive(false);
+        background.SetActive(false); 
+        outlineBackground.SetActive(false);
+
         Time.timeScale = 1f; 
     }
 
@@ -44,6 +54,10 @@ public class UIManager : MonoBehaviour
     {
         scoreCanvas.enabled = false;
         lvlCompletePanel.SetActive(true);
+        mazeBackground.SetActive(true);
+        background.SetActive(true);
+        outlineBackground.SetActive(true);
+        
         PauseGameAndUnlockCursor();
         
         // Update Text
@@ -61,6 +75,8 @@ public class UIManager : MonoBehaviour
     {
         scoreCanvas.enabled = false;
         losePanel.SetActive(true);
+        outlineBackground.SetActive(true);
+
         PauseGameAndUnlockCursor();
 
         // Update Texts
