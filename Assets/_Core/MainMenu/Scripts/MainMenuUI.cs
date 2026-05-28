@@ -56,4 +56,12 @@ public class MainMenuUI : MonoBehaviour
         howToPlayPanel.SetActive(false);
         creditsPanel.SetActive(false);
     }
+
+    public void ExitBtn()
+    {
+        Application.Quit();
+
+        //for testing
+        Debug.Log("Exit Game");
+    }
 }
