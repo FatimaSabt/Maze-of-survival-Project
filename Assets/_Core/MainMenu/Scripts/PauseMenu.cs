@@ -13,6 +13,10 @@ public class PauseMenu : MonoBehaviour
     [Header("Main Menu Scene")]
     public string mainMenuSceneName = "MainMenu";
 
+    [Header("Background Outline")]
+    public GameObject backgroundOutline;
+
+
     private bool isPaused = false;
 
     void Start()
@@ -99,6 +103,7 @@ public class PauseMenu : MonoBehaviour
     {
         // 14. Hide pause menu
         pauseMenuPanel.SetActive(false);
+        backgroundOutline.SetActive(false);
 
         // 15. Show settings panel
         pauseSettingsPanel.SetActive(true);
@@ -114,6 +119,7 @@ public class PauseMenu : MonoBehaviour
     {
         // 17. Hide settings panel
         pauseSettingsPanel.SetActive(false);
+        backgroundOutline.SetActive(true);
 
         // 18. Show pause menu again
         pauseMenuPanel.SetActive(true);

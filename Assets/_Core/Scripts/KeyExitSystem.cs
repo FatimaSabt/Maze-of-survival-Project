@@ -15,28 +15,6 @@ public class KeyExitSystem : MonoBehaviour
        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         PlayerInventory inventory = other.GetComponent<PlayerInventory>();
-
-    //         if (inventory != null && inventory.HasKey())
-    //         {
-    //             inventory.UseKey();
-    //             Destroy(gameObject);
-    //             audioManager.PlaySFX(audioManager._exit);
-    //             Debug.Log("Door unlocked! You can exit now.");
-    //             sceneController.LoadNextScene(nextLevel);
-    //         }
-    //         else
-    //         {
-    //             audioManager.PlaySFX(audioManager._doorClosed);
-    //             Debug.Log("Door is locked. You need a key.");
-    //         }
-    //     }
-    // }
-
     // ---- New Code ---
     private void OnTriggerEnter(Collider other)
     {
@@ -51,12 +29,11 @@ public class KeyExitSystem : MonoBehaviour
             {
                 inventory.UseKey();
                 Destroy(gameObject);
-                
-                // // Hide the door and disable its collider instead of Destroying it immediately
-                // GetComponent<MeshRenderer>().enabled = false;
-                // GetComponent<Collider>().enabled = false;
+               
 
                 audioManager.PlaySFX(audioManager._exit);
+                
+                
                 Debug.Log("Door unlocked! You can exit now.");
                 
                 //sceneController.LoadNextScene(nextLevel);
