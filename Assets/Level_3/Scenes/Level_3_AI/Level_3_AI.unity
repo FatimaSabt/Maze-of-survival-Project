@@ -8105,6 +8105,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 107409966}
   m_SourcePrefab: {fileID: 100100000, guid: 4224dfcf39b9ca848800011919f8cef9, type: 3}
+--- !u!114 &324319253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7659111008740751982, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
+  m_PrefabInstance: {fileID: 885460619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69b50fe4b34a2145bb8d2c1fccf944a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
 --- !u!1 &325712176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4224dfcf39b9ca848800011919f8cef9, type: 3}
@@ -20375,10 +20386,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5490015196461503454, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 324319253}
+    - target: {fileID: 5490015196461503454, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 7659111008740751982, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
       propertyPath: gameplayUI
       value: 
       objectReference: {fileID: 378004901}
+    - target: {fileID: 7659111008740751982, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
+      propertyPath: backgroundOutline
+      value: 
+      objectReference: {fileID: 1372740126}
     - target: {fileID: 8688840396272932111, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -28364,7 +28387,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 92c95e6dab0eda64ab60ecd626d0837c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ffecc4e041fad5b4eb2c03337b2a650b, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1219720927
 PrefabInstance:
@@ -32455,6 +32478,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361820007}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1372740126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3089290845142706719, guid: f40644eda6bfd1a4cb8f9687d4a3f2d8, type: 3}
+  m_PrefabInstance: {fileID: 885460619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1373328303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33659,6 +33687,10 @@ PrefabInstance:
     - target: {fileID: 6947781609190506195, guid: 4c160544555544a348de65768cad4bf5, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947781609190506195, guid: 4c160544555544a348de65768cad4bf5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55375,7 +55407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.02
+      value: 68.05
       objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -55383,7 +55415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.3
+      value: -77.28
       objectReference: {fileID: 0}
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalRotation.w

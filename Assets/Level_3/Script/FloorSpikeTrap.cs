@@ -13,17 +13,20 @@ public class FloorSpikeTrap : MonoBehaviour
     public float lowerSpeed = 4f;
     public float activeTime = 2f;
 
+    public AudioSource spike;
+
     AudioManager audioManager;
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         // Start the spikes in the hidden local position
         raisedPos = spikes.localPosition;
         spikes.localPosition = hiddenPos;
 
         // Start the trap loop
         StartCoroutine(TrapLoop());
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     IEnumerator TrapLoop()
@@ -34,11 +37,15 @@ public class FloorSpikeTrap : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
 
             // Move spikes out
-            audioManager.PlaySFX(audioManager._spikeTrap);
+            // Play sound if enabled
+            if (audioManager != null && audioManager.isSoundOn)
+            {
+                spike.Play();
+            }
             yield return MoveSpike(raisedPos, riseSpeed);
 
             // Keep spikes active for a short time
-            audioManager.StopSFX();
+            spike.Stop();
             yield return new WaitForSeconds(activeTime);
 
             // Move spikes back in

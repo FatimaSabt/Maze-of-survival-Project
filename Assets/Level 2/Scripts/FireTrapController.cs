@@ -14,13 +14,18 @@ public class FireTrapController : MonoBehaviour
     public float warningTime = 2.0f;
     public float fireTime = 3.0f;
 
+    [Header("Audio sources")]
+    public AudioSource steam;
+    public AudioSource fire;
+
     AudioManager audioManager;
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         // Start the trap cycle immediately
         StartCoroutine(TrapCycle());
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();    
     }
 
     IEnumerator TrapCycle()
@@ -41,7 +46,12 @@ public class FireTrapController : MonoBehaviour
 
             // State 2: Telegraph Warning (Smoke only)
             warningSmoke.Play();
-            audioManager.PlaySFX(audioManager._steam);
+
+            if (audioManager != null && audioManager.isSoundOn)
+            {
+                steam.Play();
+            }
+
             yield return new WaitForSeconds(warningTime);
 
             // Safety Check 3
@@ -49,12 +59,20 @@ public class FireTrapController : MonoBehaviour
 
             // State 3: Active Hazard (Fire and Collider ON, clear smoke)
             warningSmoke.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-            audioManager.StopSFX();
+
+            steam.Stop();
+
             fireParticles.Play();
-            audioManager.PlaySFX(audioManager._fireTrap);
+
+            if (audioManager != null && audioManager.isSoundOn)
+            {
+                fire.Play();
+            }
+
             damageCollider.enabled = true;
             yield return new WaitForSeconds(fireTime);
-            audioManager.StopSFX();
+
+            fire.Stop();
         }
     }
 

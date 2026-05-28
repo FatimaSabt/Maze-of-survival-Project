@@ -17,14 +17,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioClip _doorClosed;
     [SerializeField] public AudioClip _exit;
 
-    [Header("Traps")]
-    [SerializeField] public AudioClip _arrowTrap;
-    [SerializeField] public AudioClip _steam;
-    [SerializeField] public AudioClip _fireTrap;
-    [SerializeField] public AudioClip _spikeTrap;
-
-    private bool isMusicOn = true;
-    private bool isSoundOn = true;
+    public bool isMusicOn = true;
+    public bool isSoundOn = true;
 
     void Start()
     {
