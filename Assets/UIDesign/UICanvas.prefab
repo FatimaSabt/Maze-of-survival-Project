@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 3033998133802494041}
   - component: {fileID: 8911784943836494111}
   m_Layer: 5
-  m_Name: NextLevelBtn
+  m_Name: TryAgainBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
