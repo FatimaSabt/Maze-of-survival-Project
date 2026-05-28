@@ -1050,8 +1050,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284901747
-  m_fontColor: {r: 0.4528302, g: 0.40989468, b: 0.4001424, a: 1}
+    rgba: 4287796900
+  m_fontColor: {r: 0.6415094, g: 0.5893111, b: 0.5719117, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1961,7 +1961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7220587835551420657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8050314, g: 0.80249983, b: 0.80249983, a: 0}
+  m_Color: {r: 0.8050314, g: 0.80249983, b: 0.80249983, a: 0.5647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2349,15 +2349,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.37106913, g: 0.11767861, b: 0.0058343825, a: 0.101960786}
+  m_Color: {r: 0.7924528, g: 0.67613786, b: 0.6242435, a: 0.101960786}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0cd3c063bed7c7488d59b260eab6602, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2630,6 +2630,7 @@ MonoBehaviour:
   pauseSettingsPanel: {fileID: 4423723744385136295}
   gameplayUI: {fileID: 0}
   mainMenuSceneName: MainMenu
+  backgroundOutline: {fileID: 3089290845142706719}
 --- !u!1 &4423723744385136295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,7 +2649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7358728848504851153
 RectTransform:
   m_ObjectHideFlags: 0

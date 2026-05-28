@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         // 1. Hide pause menu screens at the start
         pauseMenuPanel.SetActive(false);
+        backgroundOutline.SetActive(false);
         pauseSettingsPanel.SetActive(false);
 
         // 2. Show gameplay UI at the start
@@ -59,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     {
         // 6. Show pause menu
         pauseMenuPanel.SetActive(true);
+        backgroundOutline.SetActive(true);
         pauseSettingsPanel.SetActive(false);
 
         // 7. Hide gameplay UI
@@ -81,6 +83,7 @@ public class PauseMenu : MonoBehaviour
     {
         // 10. Hide pause menu screens
         pauseMenuPanel.SetActive(false);
+        backgroundOutline.SetActive(false);
         pauseSettingsPanel.SetActive(false);
 
         // 11. Show gameplay UI again
