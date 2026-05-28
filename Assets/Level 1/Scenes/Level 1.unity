@@ -1237,6 +1237,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 339098226}
     - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1423543472}
+    - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
       propertyPath: KeyText
       value: 
       objectReference: {fileID: 339098225}

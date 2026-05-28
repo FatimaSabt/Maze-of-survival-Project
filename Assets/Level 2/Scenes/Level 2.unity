@@ -2688,6 +2688,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_Name
       value: Remy
@@ -2750,10 +2754,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8445799925900694742, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: isMusicOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4008,6 +4008,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5396438452470865772, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_Name
       value: RemyForWinTesting
@@ -4067,10 +4071,6 @@ PrefabInstance:
     - target: {fileID: 6876093738097320338, guid: 6c6a722c7231e1f4f8cbf215a731d7a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280923199854582615, guid: 3ddcfb8f50b8e4a70bf97c0fbd5d8ba3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5759,7 +5759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166755995225798562, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level_3
+      value: Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 3336044230181647601, guid: 6ac180ade4c8041cf9a73f3f835147a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6109,6 +6109,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1907628115}
+    - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1907628113}
     - target: {fileID: 4710612037699246430, guid: f8f975706d21a4cc7a439730d96ec850, type: 3}
       propertyPath: KeyText
       value: 

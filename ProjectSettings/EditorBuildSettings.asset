@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_Core/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/_Core/MainMenu/Scene/MainMenu.unity
+    path: Assets/MainMenu/Scene/MainMenu.unity
     guid: 24cb51ab5b3657f42b6db536c42e5fb4
   - enabled: 1
     path: Assets/Level 1/Scenes/Level 1.unity
@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Level 2/Scenes/Level 2.unity
     guid: ed791fd4a626e43d4ae8c3f73ae064b4
   - enabled: 1
-    path: Assets/Level_3/Scenes/Level_3.unity
+    path: Assets/Level 3/Scenes/Level 3.unity
     guid: 5f409cb0e96825841aa3eba0510870a3
   - enabled: 1
     path: Assets/Level 4/Scene/Level 4.unity
@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Level 2/Scenes/Level_2_AI/Level_2_Al.unity
     guid: f649463b7e9c44e46ba28b751f095b66
   - enabled: 1
-    path: Assets/Level_3/Scenes/Level_3_AI/Level_3_AI.unity
+    path: Assets/Level 3/Scenes/Level_3_AI/Level_3_AI.unity
     guid: a9d6d6778d33336429f8f18de27be7fd
   - enabled: 1
     path: Assets/Level 4/Scene/Level_4_AI/Level_4_AI.unity

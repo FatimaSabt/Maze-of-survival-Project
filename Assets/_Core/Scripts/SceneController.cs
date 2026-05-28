@@ -12,6 +12,8 @@ public class SceneController : MonoBehaviour
     public TextMeshProUGUI KeyText; // Reference to the TextMeshPro for displaying key collected
     public TextMeshProUGUI timer; // Reference to the TextMeshPro for displaying timer
 
+    public Canvas canvas;
+
     internal static readonly int Coins;
 
     // make SceneController as Singleton
@@ -45,6 +47,10 @@ public class SceneController : MonoBehaviour
 
             // Spawn player at the SpawnPoint in the current scene
             SpawnPlayerAtSpawnPoint();
+        }
+        if (canvas != null) {
+            //Make sure score canvase is active
+            canvas.enabled = true;
         }
     
     }
