@@ -33,11 +33,11 @@ The game requires a keyboard and mouse to play.
 
 ## 🛠️ Technical Stack
 
-* [cite_start]**Game Engine**: Unity
-* [cite_start]**Programming Language**: C#
-* [cite_start]**AI Pathfinding**: Unity NavMesh System
-* [cite_start]**UI System**: TextMeshPro (TMP) for global stat tracking and menus
-* [cite_start]**Architecture**: heavily utilizes the Singleton pattern for the Scene Controller and UI Manager, alongside a modular Prefab workflow for level generation.
+* **Game Engine**: Unity
+* **Programming Language**: C#
+* **AI Pathfinding**: Unity NavMesh System
+* **UI System**: TextMeshPro (TMP) for global stat tracking and menus
+* **Architecture**: heavily utilizes the Singleton pattern for the Scene Controller and UI Manager, alongside a modular Prefab workflow for level generation.
 
 ---
 
