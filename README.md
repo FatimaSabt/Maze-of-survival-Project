@@ -8,8 +8,8 @@ Maze of Survival is a first-person 3D Puzzle-Survival adventure game designed fo
 * **Dual Gameplay Modes**:
   * **Main Survival Mode**: A puzzle-focused escape experience relying on timing and precision.
   * **VS AI Mode**: A high-pressure pursuit mode where an AI-controlled hunter actively chases the player through the maze. In the final level, retrieving the key deactivates the traps but immediately triggers a relentless chase to the exit.
-* **Deadly Hazards**: Survive a variety of environmental traps including Poison Floor Tiles, Fire Jets, Wall Spikes, Swinging Blades, and Arrow Shooters.
-* **Risk vs. Reward System**: Explore alternate paths to collect hidden coins to maximize your final score on the leaderboard.
+* **Deadly Hazards**: Survive a variety of environmental traps including Poison Floor Tiles, Fire Jets, Floor Spikes, Swinging Blades, and Arrow Shooters.
+* **Risk vs. Reward System**: Explore alternate paths to collect hidden coins to maximize your final score.
 
 ---
 
